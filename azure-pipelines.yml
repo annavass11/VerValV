@@ -25,6 +25,6 @@ steps:
            npm install chromedriver
   displayName: 'Install dependencies'
 
-- powershell: robot --pythonpath . ./*/*.robot
+- powershell: robot . ./*/*.robot
   displayName: 'Run Robot scripts'
     
