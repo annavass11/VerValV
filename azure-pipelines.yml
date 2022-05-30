@@ -19,10 +19,10 @@ steps:
     versionSpec: '$(python.version)'
   displayName: 'x64'
 
-- script:  pip install robotframework -U robotframework-selenium2library 
-           npm install chromedriver 
+- script:  pip install robotframework robotframework-selenium2library  
            pip install robotframework-databaselibrary
            pip install  webdriver-manager
+           npm install chromedriver
   displayName: 'Install dependencies'
 
 - powershell: robot --pythonpath . ./*/*.robot
