@@ -48,7 +48,7 @@ Connect To DB
 
 User Should Be In Database
     Table Must Exist        Users
-	Check If Exists In Database     select UserID from Users where Username=${USERNAME}
+	Check If Exists In Database     select UserID from Users where Username='bela'
    
 Delete User
 	Execute SQL String  delete from Users where Username = 'bela'

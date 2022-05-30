@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.10.4 on win32)" generated="20220530 01:00:00.896" rpa="false" schemaversion="3">
+<robot generator="Robot 5.0.1 (Python 3.10.4 on win32)" generated="20220530 22:35:44.678" rpa="false" schemaversion="3">
 <suite id="s1" name="loginTest" source="C:\Users\Reka\Desktop\robot\Sajat\Test1_login\loginTest.robot">
 <test id="s1-t1" name="Sign Up A User" line="9">
 <kw name="Open Browser To URL">
@@ -7,63 +7,63 @@
 <arg>http://localhost:5000/#lista</arg>
 <arg>browser=chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220530 01:00:01.155" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5000/#lista'.</msg>
-<status status="PASS" starttime="20220530 01:00:01.155" endtime="20220530 01:00:02.525"/>
+<msg timestamp="20220530 22:35:45.380" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5000/#lista'.</msg>
+<status status="PASS" starttime="20220530 22:35:45.380" endtime="20220530 22:35:46.806"/>
 </kw>
 <kw name="Maximize Browser Window" library="Selenium2Library">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20220530 01:00:02.525" endtime="20220530 01:00:02.651"/>
+<status status="PASS" starttime="20220530 22:35:46.806" endtime="20220530 22:35:46.926"/>
 </kw>
-<status status="PASS" starttime="20220530 01:00:01.155" endtime="20220530 01:00:02.651"/>
+<status status="PASS" starttime="20220530 22:35:45.380" endtime="20220530 22:35:46.926"/>
 </kw>
 <kw name="Sign Up User">
 <kw name="Click Element" library="Selenium2Library">
 <arg>xpath://*[@id="navbarNav"]/ul/li[2]/a</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220530 01:00:02.651" level="INFO">Clicking element 'xpath://*[@id="navbarNav"]/ul/li[2]/a'.</msg>
-<status status="PASS" starttime="20220530 01:00:02.651" endtime="20220530 01:00:02.762"/>
+<msg timestamp="20220530 22:35:46.926" level="INFO">Clicking element 'xpath://*[@id="navbarNav"]/ul/li[2]/a'.</msg>
+<status status="PASS" starttime="20220530 22:35:46.926" endtime="20220530 22:35:47.006"/>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
 <arg>xpath:/html/body/main/div/div/form/div[1]/input</arg>
 <arg>${USERNAME}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220530 01:00:02.762" level="INFO">Typing text 'panna' into text field 'xpath:/html/body/main/div/div/form/div[1]/input'.</msg>
-<status status="PASS" starttime="20220530 01:00:02.762" endtime="20220530 01:00:02.854"/>
+<msg timestamp="20220530 22:35:47.007" level="INFO">Typing text 'panna' into text field 'xpath:/html/body/main/div/div/form/div[1]/input'.</msg>
+<status status="PASS" starttime="20220530 22:35:47.006" endtime="20220530 22:35:47.065"/>
 </kw>
 <kw name="Input Password" library="Selenium2Library">
 <arg>xpath:/html/body/main/div/div/form/div[2]/input</arg>
 <arg>${PASSWORD}</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20220530 01:00:02.854" level="INFO">Typing password into text field 'xpath:/html/body/main/div/div/form/div[2]/input'.</msg>
-<msg timestamp="20220530 01:00:02.902" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20220530 01:00:02.949" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20220530 01:00:02.854" endtime="20220530 01:00:02.949"/>
+<msg timestamp="20220530 22:35:47.065" level="INFO">Typing password into text field 'xpath:/html/body/main/div/div/form/div[2]/input'.</msg>
+<msg timestamp="20220530 22:35:47.094" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220530 22:35:47.106" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220530 22:35:47.065" endtime="20220530 22:35:47.106"/>
 </kw>
 <kw name="Click Element" library="Selenium2Library">
 <arg>xpath:/html/body/main/div/div/form/input</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220530 01:00:02.949" level="INFO">Clicking element 'xpath:/html/body/main/div/div/form/input'.</msg>
-<status status="PASS" starttime="20220530 01:00:02.949" endtime="20220530 01:00:03.188"/>
+<msg timestamp="20220530 22:35:47.106" level="INFO">Clicking element 'xpath:/html/body/main/div/div/form/input'.</msg>
+<status status="PASS" starttime="20220530 22:35:47.106" endtime="20220530 22:35:47.243"/>
 </kw>
-<status status="PASS" starttime="20220530 01:00:02.651" endtime="20220530 01:00:03.188"/>
+<status status="PASS" starttime="20220530 22:35:46.926" endtime="20220530 22:35:47.244"/>
 </kw>
 <kw name="Result Should Contain Username And Password">
 <kw name="Element Should Contain" library="Selenium2Library">
 <arg>xpath://*[@id="navbarNav"]/ul/li[6]/p</arg>
 <arg>${USERNAME}</arg>
 <doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<msg timestamp="20220530 01:00:03.234" level="INFO">Element 'xpath://*[@id="navbarNav"]/ul/li[6]/p' contains text 'panna'.</msg>
-<status status="PASS" starttime="20220530 01:00:03.188" endtime="20220530 01:00:03.234"/>
+<msg timestamp="20220530 22:35:47.267" level="INFO">Element 'xpath://*[@id="navbarNav"]/ul/li[6]/p' contains text 'panna'.</msg>
+<status status="PASS" starttime="20220530 22:35:47.245" endtime="20220530 22:35:47.268"/>
 </kw>
-<status status="PASS" starttime="20220530 01:00:03.188" endtime="20220530 01:00:03.234"/>
+<status status="PASS" starttime="20220530 22:35:47.244" endtime="20220530 22:35:47.268"/>
 </kw>
 <kw name="Close Browser" library="Selenium2Library">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20220530 01:00:03.234" endtime="20220530 01:00:05.338"/>
+<status status="PASS" starttime="20220530 22:35:47.268" endtime="20220530 22:35:49.340"/>
 </kw>
-<status status="PASS" starttime="20220530 01:00:01.149" endtime="20220530 01:00:05.338"/>
+<status status="PASS" starttime="20220530 22:35:45.367" endtime="20220530 22:35:49.341"/>
 </test>
-<status status="PASS" starttime="20220530 01:00:00.896" endtime="20220530 01:00:05.341"/>
+<status status="PASS" starttime="20220530 22:35:44.678" endtime="20220530 22:35:49.342"/>
 </suite>
 <statistics>
 <total>
