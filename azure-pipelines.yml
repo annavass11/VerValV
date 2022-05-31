@@ -23,7 +23,7 @@ jobs:
       architecture: 'x64'
     displayName: 'Use Python $(python.version)'
 
-  - script: pip install robotframework robotframework-seleniumlibrary && npm install chromedriver --detect_chromedriver_version
+  - script: pip install robotframework robotframework-selenium2library && npm install chromedriver --detect_chromedriver_version
     displayName: 'Install dependencies'
 
   - powershell: robot --pythonpath . ./AzureTest/*/*.robot
