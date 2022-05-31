@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.4 on win32)" generated="20220531 05:43:47.730" rpa="false" schemaversion="3">
+<suite id="s1" name="registerDataDriven" source="C:\Users\Reka\Desktop\robot\Sajat\Test7_datadriven\registerDataDriven.robot">
+<test id="s1-t1" name="The Username Already Exists" line="18">
+<kw name="Registration Should Fail When">
+<arg>panna</arg>
+<arg>panna</arg>
+<arg>aaa</arg>
+<arg>aaa</arg>
+<kw name="Open Browser" library="Selenium2Library">
+<arg>http://localhost:5000/#lista</arg>
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220531 05:43:47.886" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5000/#lista'.</msg>
+<status status="PASS" starttime="20220531 05:43:47.886" endtime="20220531 05:43:49.085"/>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220531 05:43:49.085" endtime="20220531 05:43:49.222"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath://*[@id="navbarNav"]/ul/li[3]/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220531 05:43:49.222" level="INFO">Clicking element 'xpath://*[@id="navbarNav"]/ul/li[3]/a'.</msg>
+<status status="PASS" starttime="20220531 05:43:49.222" endtime="20220531 05:43:49.315"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath:/html/body/main/div/div/form/div[1]/input</arg>
+<arg>${Name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220531 05:43:49.316" level="INFO">Typing text 'panna' into text field 'xpath:/html/body/main/div/div/form/div[1]/input'.</msg>
+<status status="PASS" starttime="20220531 05:43:49.316" endtime="20220531 05:43:49.374"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath:/html/body/main/div/div/form/div[2]/input</arg>
+<arg>${Username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220531 05:43:49.375" level="INFO">Typing text 'panna' into text field 'xpath:/html/body/main/div/div/form/div[2]/input'.</msg>
+<status status="PASS" starttime="20220531 05:43:49.374" endtime="20220531 05:43:49.422"/>
+</kw>
+<kw name="Input Password" library="Selenium2Library">
+<arg>xpath:/html/body/main/div/div/form/div[3]/input</arg>
+<arg>${Password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20220531 05:43:49.423" level="INFO">Typing password into text field 'xpath:/html/body/main/div/div/form/div[3]/input'.</msg>
+<msg timestamp="20220531 05:43:49.434" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220531 05:43:49.472" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220531 05:43:49.422" endtime="20220531 05:43:49.472"/>
+</kw>
+<kw name="Input Password" library="Selenium2Library">
+<arg>xpath:/html/body/main/div/div/form/div[4]/input</arg>
+<arg>${PasswordAgain}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20220531 05:43:49.473" level="INFO">Typing password into text field 'xpath:/html/body/main/div/div/form/div[4]/input'.</msg>
+<msg timestamp="20220531 05:43:49.496" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220531 05:43:49.515" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220531 05:43:49.473" endtime="20220531 05:43:49.515"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath://*[@id="submit"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220531 05:43:49.516" level="INFO">Clicking element 'xpath://*[@id="submit"]'.</msg>
+<status status="PASS" starttime="20220531 05:43:49.515" endtime="20220531 05:43:49.568"/>
+</kw>
+<kw name="Connect To Database" library="DatabaseLibrary">
+<arg>pymysql</arg>
+<arg>${DBNAME}</arg>
+<arg>${DBUSERNAME}</arg>
+<arg>${DBPASSWORD}</arg>
+<arg>${ADDRESS}</arg>
+<arg>${PORT}</arg>
+<doc>Loads the DB API 2.0 module given `dbapiModuleName` then uses it to
+connect to the database using `dbName`, `dbUsername`, and `dbPassword`.</doc>
+<msg timestamp="20220531 05:43:49.593" level="INFO">Connecting using : pymysql.connect(db=Filmek, user=root, passwd=abcd, host=localhost, port=3306, charset=None) </msg>
+<status status="PASS" starttime="20220531 05:43:49.568" endtime="20220531 05:43:49.593"/>
+</kw>
+<kw name="Table Must Exist" library="DatabaseLibrary">
+<arg>Users</arg>
+<doc>Check if the table given exists in the database. Set optional input `sansTran` to True to run command without an
+explicit transaction commit or rollback.</doc>
+<msg timestamp="20220531 05:43:49.593" level="INFO">Executing : Table Must Exist  |  Users </msg>
+<msg timestamp="20220531 05:43:49.593" level="INFO">Executing : Row Count  |  SELECT * FROM information_schema.tables WHERE table_name='Users' </msg>
+<status status="PASS" starttime="20220531 05:43:49.593" endtime="20220531 05:43:49.593"/>
+</kw>
+<kw name="Get Location" library="Selenium2Library">
+<var>${loc}</var>
+<doc>Returns the current browser window URL.</doc>
+<msg timestamp="20220531 05:43:49.593" level="INFO">${loc} = http://localhost:5000/auth/register</msg>
+<status status="PASS" starttime="20220531 05:43:49.593" endtime="20220531 05:43:49.593"/>
+</kw>
+<kw name="Should Not Be Equal As Strings" library="BuiltIn">
+<arg>${loc}</arg>
+<arg>http://localhost:5000/</arg>
+<doc>Fails if objects are equal after converting them to strings.</doc>
+<status status="PASS" starttime="20220531 05:43:49.593" endtime="20220531 05:43:49.593"/>
+</kw>
+<kw name="Disconnect From Database" library="DatabaseLibrary">
+<doc>Disconnects from the database.</doc>
+<msg timestamp="20220531 05:43:49.593" level="INFO">Executing : Disconnect From Database</msg>
+<status status="PASS" starttime="20220531 05:43:49.593" endtime="20220531 05:43:49.593"/>
+</kw>
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220531 05:43:49.593" endtime="20220531 05:43:51.677"/>
+</kw>
+<status status="PASS" starttime="20220531 05:43:47.885" endtime="20220531 05:43:51.677"/>
+</kw>
+<status status="PASS" starttime="20220531 05:43:47.885" endtime="20220531 05:43:51.677"/>
+</test>
+<test id="s1-t2" name="The Username Is Empty" line="19">
+<kw name="Registration Should Fail When">
+<arg>${EMPTY}</arg>
+<arg>panna</arg>
+<arg>aaa</arg>
+<arg>aaa</arg>
+<kw name="Open Browser" library="Selenium2Library">
+<arg>http://localhost:5000/#lista</arg>
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220531 05:43:51.681" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5000/#lista'.</msg>
+<status status="PASS" starttime="20220531 05:43:51.681" endtime="20220531 05:43:52.858"/>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220531 05:43:52.858" endtime="20220531 05:43:52.988"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath://*[@id="navbarNav"]/ul/li[3]/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220531 05:43:52.988" level="INFO">Clicking element 'xpath://*[@id="navbarNav"]/ul/li[3]/a'.</msg>
+<status status="PASS" starttime="20220531 05:43:52.988" endtime="20220531 05:43:53.077"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath:/html/body/main/div/div/form/div[1]/input</arg>
+<arg>${Name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220531 05:43:53.078" level="INFO">Typing text '' into text field 'xpath:/html/body/main/div/div/form/div[1]/input'.</msg>
+<status status="PASS" starttime="20220531 05:43:53.077" endtime="20220531 05:43:53.125"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath:/html/body/main/div/div/form/div[2]/input</arg>
+<arg>${Username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220531 05:43:53.127" level="INFO">Typing text 'panna' into text field 'xpath:/html/body/main/div/div/form/div[2]/input'.</msg>
+<status status="PASS" starttime="20220531 05:43:53.127" endtime="20220531 05:43:53.183"/>
+</kw>
+<kw name="Input Password" library="Selenium2Library">
+<arg>xpath:/html/body/main/div/div/form/div[3]/input</arg>
+<arg>${Password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20220531 05:43:53.183" level="INFO">Typing password into text field 'xpath:/html/body/main/div/div/form/div[3]/input'.</msg>
+<msg timestamp="20220531 05:43:53.209" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220531 05:43:53.239" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220531 05:43:53.183" endtime="20220531 05:43:53.239"/>
+</kw>
+<kw name="Input Password" library="Selenium2Library">
+<arg>xpath:/html/body/main/div/div/form/div[4]/input</arg>
+<arg>${PasswordAgain}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20220531 05:43:53.239" level="INFO">Typing password into text field 'xpath:/html/body/main/div/div/form/div[4]/input'.</msg>
+<msg timestamp="20220531 05:43:53.264" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220531 05:43:53.285" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220531 05:43:53.239" endtime="20220531 05:43:53.285"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath://*[@id="submit"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220531 05:43:53.285" level="INFO">Clicking element 'xpath://*[@id="submit"]'.</msg>
+<status status="PASS" starttime="20220531 05:43:53.285" endtime="20220531 05:43:53.317"/>
+</kw>
+<kw name="Connect To Database" library="DatabaseLibrary">
+<arg>pymysql</arg>
+<arg>${DBNAME}</arg>
+<arg>${DBUSERNAME}</arg>
+<arg>${DBPASSWORD}</arg>
+<arg>${ADDRESS}</arg>
+<arg>${PORT}</arg>
+<doc>Loads the DB API 2.0 module given `dbapiModuleName` then uses it to
+connect to the database using `dbName`, `dbUsername`, and `dbPassword`.</doc>
+<msg timestamp="20220531 05:43:53.317" level="INFO">Connecting using : pymysql.connect(db=Filmek, user=root, passwd=abcd, host=localhost, port=3306, charset=None) </msg>
+<status status="PASS" starttime="20220531 05:43:53.317" endtime="20220531 05:43:53.319"/>
+</kw>
+<kw name="Table Must Exist" library="DatabaseLibrary">
+<arg>Users</arg>
+<doc>Check if the table given exists in the database. Set optional input `sansTran` to True to run command without an
+explicit transaction commit or rollback.</doc>
+<msg timestamp="20220531 05:43:53.320" level="INFO">Executing : Table Must Exist  |  Users </msg>
+<msg timestamp="20220531 05:43:53.320" level="INFO">Executing : Row Count  |  SELECT * FROM information_schema.tables WHERE table_name='Users' </msg>
+<status status="PASS" starttime="20220531 05:43:53.319" endtime="20220531 05:43:53.321"/>
+</kw>
+<kw name="Get Location" library="Selenium2Library">
+<var>${loc}</var>
+<doc>Returns the current browser window URL.</doc>
+<msg timestamp="20220531 05:43:53.324" level="INFO">${loc} = http://localhost:5000/auth/register</msg>
+<status status="PASS" starttime="20220531 05:43:53.321" endtime="20220531 05:43:53.324"/>
+</kw>
+<kw name="Should Not Be Equal As Strings" library="BuiltIn">
+<arg>${loc}</arg>
+<arg>http://localhost:5000/</arg>
+<doc>Fails if objects are equal after converting them to strings.</doc>
+<status status="PASS" starttime="20220531 05:43:53.324" endtime="20220531 05:43:53.324"/>
+</kw>
+<kw name="Disconnect From Database" library="DatabaseLibrary">
+<doc>Disconnects from the database.</doc>
+<msg timestamp="20220531 05:43:53.325" level="INFO">Executing : Disconnect From Database</msg>
+<status status="PASS" starttime="20220531 05:43:53.324" endtime="20220531 05:43:53.325"/>
+</kw>
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220531 05:43:53.325" endtime="20220531 05:43:55.400"/>
+</kw>
+<status status="PASS" starttime="20220531 05:43:51.680" endtime="20220531 05:43:55.401"/>
+</kw>
+<status status="PASS" starttime="20220531 05:43:51.680" endtime="20220531 05:43:55.401"/>
+</test>
+<test id="s1-t3" name="The Passwords Are Different" line="20">
+<kw name="Registration Should Fail When">
+<arg>anna</arg>
+<arg>anna</arg>
+<arg>abcd</arg>
+<arg>abb</arg>
+<kw name="Open Browser" library="Selenium2Library">
+<arg>http://localhost:5000/#lista</arg>
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220531 05:43:55.404" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5000/#lista'.</msg>
+<status status="PASS" starttime="20220531 05:43:55.404" endtime="20220531 05:43:56.561"/>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220531 05:43:56.561" endtime="20220531 05:43:56.681"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath://*[@id="navbarNav"]/ul/li[3]/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220531 05:43:56.681" level="INFO">Clicking element 'xpath://*[@id="navbarNav"]/ul/li[3]/a'.</msg>
+<status status="PASS" starttime="20220531 05:43:56.681" endtime="20220531 05:43:56.768"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath:/html/body/main/div/div/form/div[1]/input</arg>
+<arg>${Name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220531 05:43:56.769" level="INFO">Typing text 'anna' into text field 'xpath:/html/body/main/div/div/form/div[1]/input'.</msg>
+<status status="PASS" starttime="20220531 05:43:56.768" endtime="20220531 05:43:56.842"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath:/html/body/main/div/div/form/div[2]/input</arg>
+<arg>${Username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220531 05:43:56.842" level="INFO">Typing text 'anna' into text field 'xpath:/html/body/main/div/div/form/div[2]/input'.</msg>
+<status status="PASS" starttime="20220531 05:43:56.842" endtime="20220531 05:43:56.891"/>
+</kw>
+<kw name="Input Password" library="Selenium2Library">
+<arg>xpath:/html/body/main/div/div/form/div[3]/input</arg>
+<arg>${Password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20220531 05:43:56.891" level="INFO">Typing password into text field 'xpath:/html/body/main/div/div/form/div[3]/input'.</msg>
+<msg timestamp="20220531 05:43:56.917" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220531 05:43:56.946" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220531 05:43:56.891" endtime="20220531 05:43:56.946"/>
+</kw>
+<kw name="Input Password" library="Selenium2Library">
+<arg>xpath:/html/body/main/div/div/form/div[4]/input</arg>
+<arg>${PasswordAgain}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20220531 05:43:56.946" level="INFO">Typing password into text field 'xpath:/html/body/main/div/div/form/div[4]/input'.</msg>
+<msg timestamp="20220531 05:43:56.969" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220531 05:43:56.989" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220531 05:43:56.946" endtime="20220531 05:43:56.989"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath://*[@id="submit"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220531 05:43:56.989" level="INFO">Clicking element 'xpath://*[@id="submit"]'.</msg>
+<status status="PASS" starttime="20220531 05:43:56.989" endtime="20220531 05:43:57.042"/>
+</kw>
+<kw name="Connect To Database" library="DatabaseLibrary">
+<arg>pymysql</arg>
+<arg>${DBNAME}</arg>
+<arg>${DBUSERNAME}</arg>
+<arg>${DBPASSWORD}</arg>
+<arg>${ADDRESS}</arg>
+<arg>${PORT}</arg>
+<doc>Loads the DB API 2.0 module given `dbapiModuleName` then uses it to
+connect to the database using `dbName`, `dbUsername`, and `dbPassword`.</doc>
+<msg timestamp="20220531 05:43:57.043" level="INFO">Connecting using : pymysql.connect(db=Filmek, user=root, passwd=abcd, host=localhost, port=3306, charset=None) </msg>
+<status status="PASS" starttime="20220531 05:43:57.042" endtime="20220531 05:43:57.045"/>
+</kw>
+<kw name="Table Must Exist" library="DatabaseLibrary">
+<arg>Users</arg>
+<doc>Check if the table given exists in the database. Set optional input `sansTran` to True to run command without an
+explicit transaction commit or rollback.</doc>
+<msg timestamp="20220531 05:43:57.045" level="INFO">Executing : Table Must Exist  |  Users </msg>
+<msg timestamp="20220531 05:43:57.046" level="INFO">Executing : Row Count  |  SELECT * FROM information_schema.tables WHERE table_name='Users' </msg>
+<status status="PASS" starttime="20220531 05:43:57.045" endtime="20220531 05:43:57.048"/>
+</kw>
+<kw name="Get Location" library="Selenium2Library">
+<var>${loc}</var>
+<doc>Returns the current browser window URL.</doc>
+<msg timestamp="20220531 05:43:57.052" level="INFO">${loc} = http://localhost:5000/auth/register</msg>
+<status status="PASS" starttime="20220531 05:43:57.049" endtime="20220531 05:43:57.052"/>
+</kw>
+<kw name="Should Not Be Equal As Strings" library="BuiltIn">
+<arg>${loc}</arg>
+<arg>http://localhost:5000/</arg>
+<doc>Fails if objects are equal after converting them to strings.</doc>
+<status status="PASS" starttime="20220531 05:43:57.052" endtime="20220531 05:43:57.052"/>
+</kw>
+<kw name="Disconnect From Database" library="DatabaseLibrary">
+<doc>Disconnects from the database.</doc>
+<msg timestamp="20220531 05:43:57.053" level="INFO">Executing : Disconnect From Database</msg>
+<status status="PASS" starttime="20220531 05:43:57.052" endtime="20220531 05:43:57.053"/>
+</kw>
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220531 05:43:57.053" endtime="20220531 05:43:59.117"/>
+</kw>
+<status status="PASS" starttime="20220531 05:43:55.403" endtime="20220531 05:43:59.117"/>
+</kw>
+<status status="PASS" starttime="20220531 05:43:55.402" endtime="20220531 05:43:59.117"/>
+</test>
+<status status="PASS" starttime="20220531 05:43:47.730" endtime="20220531 05:43:59.119"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="0" skip="0" id="s1" name="registerDataDriven">registerDataDriven</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.4 on win32)" generated="20220531 05:15:59.574" rpa="false" schemaversion="3">
+<suite id="s1" name="addReview" source="C:\Users\Reka\Desktop\robot\Sajat\Test3_addmovie\addReview.robot">
+<test id="s1-t1" name="Review A Movie" line="20">
+<kw name="Open Browser To URL">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>http://localhost:5000/#lista</arg>
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220531 05:15:59.729" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5000/#lista'.</msg>
+<status status="PASS" starttime="20220531 05:15:59.728" endtime="20220531 05:16:00.916"/>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220531 05:16:00.917" endtime="20220531 05:16:01.045"/>
+</kw>
+<status status="PASS" starttime="20220531 05:15:59.728" endtime="20220531 05:16:01.045"/>
+</kw>
+<kw name="Sign In">
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath://*[@id="navbarNav"]/ul/li[2]/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220531 05:16:01.045" level="INFO">Clicking element 'xpath://*[@id="navbarNav"]/ul/li[2]/a'.</msg>
+<status status="PASS" starttime="20220531 05:16:01.045" endtime="20220531 05:16:01.124"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath:/html/body/main/div/div/form/div[1]/input</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220531 05:16:01.124" level="INFO">Typing text 'gellert' into text field 'xpath:/html/body/main/div/div/form/div[1]/input'.</msg>
+<status status="PASS" starttime="20220531 05:16:01.124" endtime="20220531 05:16:01.180"/>
+</kw>
+<kw name="Input Password" library="Selenium2Library">
+<arg>xpath:/html/body/main/div/div/form/div[2]/input</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20220531 05:16:01.180" level="INFO">Typing password into text field 'xpath:/html/body/main/div/div/form/div[2]/input'.</msg>
+<msg timestamp="20220531 05:16:01.214" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220531 05:16:01.229" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220531 05:16:01.180" endtime="20220531 05:16:01.229"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath:/html/body/main/div/div/form/input</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220531 05:16:01.229" level="INFO">Clicking element 'xpath:/html/body/main/div/div/form/input'.</msg>
+<status status="PASS" starttime="20220531 05:16:01.229" endtime="20220531 05:16:01.370"/>
+</kw>
+<status status="PASS" starttime="20220531 05:16:01.045" endtime="20220531 05:16:01.370"/>
+</kw>
+<kw name="Choose A Movie">
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath://*[@id="navbarNav"]/ul/li[1]/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220531 05:16:01.372" level="INFO">Clicking element 'xpath://*[@id="navbarNav"]/ul/li[1]/a'.</msg>
+<status status="PASS" starttime="20220531 05:16:01.372" endtime="20220531 05:16:01.408"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220531 05:16:02.413" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220531 05:16:01.408" endtime="20220531 05:16:02.413"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath:/html/body/main/div[2]/div[2]/div[1]/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220531 05:16:02.413" level="INFO">Clicking element 'xpath:/html/body/main/div[2]/div[2]/div[1]/a'.</msg>
+<status status="PASS" starttime="20220531 05:16:02.413" endtime="20220531 05:16:02.501"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220531 05:16:03.511" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220531 05:16:02.501" endtime="20220531 05:16:03.511"/>
+</kw>
+<status status="PASS" starttime="20220531 05:16:01.371" endtime="20220531 05:16:03.511"/>
+</kw>
+<kw name="Connect To DB">
+<kw name="Connect To Database" library="DatabaseLibrary">
+<arg>pymysql</arg>
+<arg>${DBNAME}</arg>
+<arg>${DBUSERNAME}</arg>
+<arg>${DBPASSWORD}</arg>
+<arg>${ADDRESS}</arg>
+<arg>${PORT}</arg>
+<doc>Loads the DB API 2.0 module given `dbapiModuleName` then uses it to
+connect to the database using `dbName`, `dbUsername`, and `dbPassword`.</doc>
+<msg timestamp="20220531 05:16:03.533" level="INFO">Connecting using : pymysql.connect(db=Filmek, user=root, passwd=abcd, host=localhost, port=3306, charset=None) </msg>
+<status status="PASS" starttime="20220531 05:16:03.511" endtime="20220531 05:16:03.533"/>
+</kw>
+<status status="PASS" starttime="20220531 05:16:03.511" endtime="20220531 05:16:03.533"/>
+</kw>
+<kw name="Fill Review">
+<kw name="Table Must Exist" library="DatabaseLibrary">
+<arg>Reviews</arg>
+<doc>Check if the table given exists in the database. Set optional input `sansTran` to True to run command without an
+explicit transaction commit or rollback.</doc>
+<msg timestamp="20220531 05:16:03.533" level="INFO">Executing : Table Must Exist  |  Reviews </msg>
+<msg timestamp="20220531 05:16:03.533" level="INFO">Executing : Row Count  |  SELECT * FROM information_schema.tables WHERE table_name='Reviews' </msg>
+<status status="PASS" starttime="20220531 05:16:03.533" endtime="20220531 05:16:03.533"/>
+</kw>
+<kw name="Row Count" library="DatabaseLibrary">
+<var>${rowCount}</var>
+<arg>SELECT ReviewID FROM Reviews</arg>
+<doc>Uses the input `selectStatement` to query the database and returns the number of rows from the query. Set
+optional input `sansTran` to True to run command without an explicit transaction commit or rollback.</doc>
+<msg timestamp="20220531 05:16:03.533" level="INFO">Executing : Row Count  |  SELECT ReviewID FROM Reviews </msg>
+<msg timestamp="20220531 05:16:03.533" level="INFO">${rowCount} = 5</msg>
+<status status="PASS" starttime="20220531 05:16:03.533" endtime="20220531 05:16:03.533"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath:/html/body/main/div[1]/form/div[2]/input</arg>
+<arg>${POINTS}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220531 05:16:03.533" level="INFO">Typing text '10' into text field 'xpath:/html/body/main/div[1]/form/div[2]/input'.</msg>
+<status status="PASS" starttime="20220531 05:16:03.533" endtime="20220531 05:16:03.584"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath:/html/body/main/div[1]/form/div[3]/input</arg>
+<arg>${REVIEW}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220531 05:16:03.585" level="INFO">Typing text 'nagyon jo' into text field 'xpath:/html/body/main/div[1]/form/div[3]/input'.</msg>
+<status status="PASS" starttime="20220531 05:16:03.584" endtime="20220531 05:16:03.626"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath://*[@id="submit"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220531 05:16:03.627" level="INFO">Clicking element 'xpath://*[@id="submit"]'.</msg>
+<status status="PASS" starttime="20220531 05:16:03.627" endtime="20220531 05:16:03.686"/>
+</kw>
+<status status="PASS" starttime="20220531 05:16:03.533" endtime="20220531 05:16:03.686"/>
+</kw>
+<kw name="Review Should Be In DB">
+<kw name="Row Count Is Greater Than X" library="DatabaseLibrary">
+<arg>select ReviewID from Reviews</arg>
+<arg>${rowCount}</arg>
+<doc>Check if the number of rows returned from `selectStatement` is greater than the value submitted. If not, then
+this will throw an AssertionError. Set optional input `sansTran` to True to run command without an explicit
+transaction commit or rollback.</doc>
+<msg timestamp="20220531 05:16:03.687" level="INFO">Executing : Row Count Is Greater Than X  |  select ReviewID from Reviews  |  0 </msg>
+<msg timestamp="20220531 05:16:03.687" level="INFO">Executing : Row Count  |  select ReviewID from Reviews </msg>
+<status status="PASS" starttime="20220531 05:16:03.687" endtime="20220531 05:16:03.688"/>
+</kw>
+<kw name="Disconnect From Database" library="DatabaseLibrary">
+<doc>Disconnects from the database.</doc>
+<msg timestamp="20220531 05:16:03.689" level="INFO">Executing : Disconnect From Database</msg>
+<status status="PASS" starttime="20220531 05:16:03.688" endtime="20220531 05:16:03.689"/>
+</kw>
+<status status="PASS" starttime="20220531 05:16:03.687" endtime="20220531 05:16:03.689"/>
+</kw>
+<kw name="Log Out">
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath://*[@id="navbarNav"]/ul/li[3]/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220531 05:16:03.690" level="INFO">Clicking element 'xpath://*[@id="navbarNav"]/ul/li[3]/a'.</msg>
+<status status="PASS" starttime="20220531 05:16:03.690" endtime="20220531 05:16:03.773"/>
+</kw>
+<status status="PASS" starttime="20220531 05:16:03.689" endtime="20220531 05:16:03.774"/>
+</kw>
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220531 05:16:03.774" endtime="20220531 05:16:05.860"/>
+</kw>
+<status status="PASS" starttime="20220531 05:15:59.718" endtime="20220531 05:16:05.860"/>
+</test>
+<status status="PASS" starttime="20220531 05:15:59.574" endtime="20220531 05:16:05.862"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="addReview">addReview</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

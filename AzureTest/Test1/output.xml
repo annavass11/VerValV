@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.4 on win32)" generated="20220531 06:10:26.935" rpa="false" schemaversion="3">
+<suite id="s1" name="Test1" source="C:\Users\Reka\Desktop\robot\Sajat\AzureTest\Test1\test1.robot">
+<test id="s1-t1" name="Search a Word With Accent In The dictionary" line="12">
+<kw name="Open Browser To URL">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>https://szinonimaszotar.hu/keres/csosz</arg>
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220531 06:10:27.090" level="INFO">Opening browser 'chrome' to base url 'https://szinonimaszotar.hu/keres/csosz'.</msg>
+<status status="PASS" starttime="20220531 06:10:27.090" endtime="20220531 06:10:28.854"/>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220531 06:10:28.854" endtime="20220531 06:10:28.966"/>
+</kw>
+<status status="PASS" starttime="20220531 06:10:27.090" endtime="20220531 06:10:28.966"/>
+</kw>
+<kw name="Accept Cookies">
+<kw name="Click Element" library="Selenium2Library">
+<arg>//*[@id="qc-cmp2-ui"]/div[2]/div/button[1]/span</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220531 06:10:28.967" level="INFO">Clicking element '//*[@id="qc-cmp2-ui"]/div[2]/div/button[1]/span'.</msg>
+<status status="PASS" starttime="20220531 06:10:28.967" endtime="20220531 06:10:29.029"/>
+</kw>
+<status status="PASS" starttime="20220531 06:10:28.967" endtime="20220531 06:10:29.029"/>
+</kw>
+<kw name="Search The Word">
+<kw name="Input Text" library="Selenium2Library">
+<arg>//*[@id="searchstring"]</arg>
+<arg>${word}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220531 06:10:29.030" level="INFO">Typing text 'csosz' into text field '//*[@id="searchstring"]'.</msg>
+<status status="PASS" starttime="20220531 06:10:29.030" endtime="20220531 06:10:29.078"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>//*[@id="search"]/form/input[2]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220531 06:10:29.078" level="INFO">Clicking element '//*[@id="search"]/form/input[2]'.</msg>
+<status status="PASS" starttime="20220531 06:10:29.078" endtime="20220531 06:10:29.312"/>
+</kw>
+<status status="PASS" starttime="20220531 06:10:29.029" endtime="20220531 06:10:29.312"/>
+</kw>
+<kw name="Verify Result">
+<arg>${wronginput}</arg>
+<kw name="Element Should Contain" library="Selenium2Library">
+<arg>//*[@id="content"]/h1</arg>
+<arg>${input}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220531 06:10:29.329" level="INFO">Element '//*[@id="content"]/h1' contains text 'Hoppá-hoppá, nincs találat!'.</msg>
+<status status="PASS" starttime="20220531 06:10:29.313" endtime="20220531 06:10:29.329"/>
+</kw>
+<status status="PASS" starttime="20220531 06:10:29.313" endtime="20220531 06:10:29.329"/>
+</kw>
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220531 06:10:29.329" endtime="20220531 06:10:31.398"/>
+</kw>
+<status status="PASS" starttime="20220531 06:10:27.089" endtime="20220531 06:10:31.398"/>
+</test>
+<test id="s1-t2" name="Search a Word Without Accent In The dictionary" line="19">
+<kw name="Open Browser To URL">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>https://szinonimaszotar.hu/keres/csosz</arg>
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220531 06:10:31.402" level="INFO">Opening browser 'chrome' to base url 'https://szinonimaszotar.hu/keres/csosz'.</msg>
+<status status="PASS" starttime="20220531 06:10:31.402" endtime="20220531 06:10:32.940"/>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220531 06:10:32.940" endtime="20220531 06:10:33.055"/>
+</kw>
+<status status="PASS" starttime="20220531 06:10:31.402" endtime="20220531 06:10:33.055"/>
+</kw>
+<kw name="Accept Cookies">
+<kw name="Click Element" library="Selenium2Library">
+<arg>//*[@id="qc-cmp2-ui"]/div[2]/div/button[1]/span</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220531 06:10:33.055" level="INFO">Clicking element '//*[@id="qc-cmp2-ui"]/div[2]/div/button[1]/span'.</msg>
+<status status="PASS" starttime="20220531 06:10:33.055" endtime="20220531 06:10:33.118"/>
+</kw>
+<status status="PASS" starttime="20220531 06:10:33.055" endtime="20220531 06:10:33.118"/>
+</kw>
+<kw name="Check Not Case Sensitive">
+<kw name="Click Element" library="Selenium2Library">
+<arg>//*[@id="onoff"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220531 06:10:33.119" level="INFO">Clicking element '//*[@id="onoff"]'.</msg>
+<status status="PASS" starttime="20220531 06:10:33.119" endtime="20220531 06:10:33.157"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>//*[@id="ekezetek"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220531 06:10:33.157" endtime="20220531 06:10:33.174"/>
+</kw>
+<kw name="Select Checkbox" library="Selenium2Library">
+<arg>//*[@id="ekezetek_mellozese"]</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20220531 06:10:33.174" level="INFO">Selecting checkbox '//*[@id="ekezetek_mellozese"]'.</msg>
+<status status="PASS" starttime="20220531 06:10:33.174" endtime="20220531 06:10:33.217"/>
+</kw>
+<status status="PASS" starttime="20220531 06:10:33.118" endtime="20220531 06:10:33.217"/>
+</kw>
+<kw name="Search The Word">
+<kw name="Input Text" library="Selenium2Library">
+<arg>//*[@id="searchstring"]</arg>
+<arg>${word}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220531 06:10:33.218" level="INFO">Typing text 'csosz' into text field '//*[@id="searchstring"]'.</msg>
+<status status="PASS" starttime="20220531 06:10:33.218" endtime="20220531 06:10:33.267"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>//*[@id="search"]/form/input[2]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220531 06:10:33.268" level="INFO">Clicking element '//*[@id="search"]/form/input[2]'.</msg>
+<status status="PASS" starttime="20220531 06:10:33.267" endtime="20220531 06:10:34.119"/>
+</kw>
+<status status="PASS" starttime="20220531 06:10:33.218" endtime="20220531 06:10:34.119"/>
+</kw>
+<kw name="Verify Result">
+<arg>${rightinput}</arg>
+<kw name="Element Should Contain" library="Selenium2Library">
+<arg>//*[@id="content"]/h1</arg>
+<arg>${input}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220531 06:10:34.134" level="INFO">Element '//*[@id="content"]/h1' contains text '"csősz" szinonimái:'.</msg>
+<status status="PASS" starttime="20220531 06:10:34.119" endtime="20220531 06:10:34.134"/>
+</kw>
+<status status="PASS" starttime="20220531 06:10:34.119" endtime="20220531 06:10:34.134"/>
+</kw>
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220531 06:10:34.134" endtime="20220531 06:10:36.201"/>
+</kw>
+<status status="PASS" starttime="20220531 06:10:31.401" endtime="20220531 06:10:36.202"/>
+</test>
+<status status="PASS" starttime="20220531 06:10:26.950" endtime="20220531 06:10:36.204"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="Test1">Test1</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

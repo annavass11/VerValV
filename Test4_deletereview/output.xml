@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.4 on win32)" generated="20220531 03:25:48.807" rpa="false" schemaversion="3">
+<suite id="s1" name="deleteReviewTest" source="C:\Users\Reka\Desktop\robot\Sajat\Test4_deletereview\deleteReviewTest.robot">
+<test id="s1-t1" name="Delete A Review" line="12">
+<kw name="Open Browser To URL">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>http://localhost:5000/#lista</arg>
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220531 03:25:48.948" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5000/#lista'.</msg>
+<status status="PASS" starttime="20220531 03:25:48.948" endtime="20220531 03:25:50.122"/>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220531 03:25:50.122" endtime="20220531 03:25:50.242"/>
+</kw>
+<status status="PASS" starttime="20220531 03:25:48.947" endtime="20220531 03:25:50.242"/>
+</kw>
+<kw name="Sign In">
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath://*[@id="navbarNav"]/ul/li[2]/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220531 03:25:50.242" level="INFO">Clicking element 'xpath://*[@id="navbarNav"]/ul/li[2]/a'.</msg>
+<status status="PASS" starttime="20220531 03:25:50.242" endtime="20220531 03:25:50.305"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath:/html/body/main/div/div/form/div[1]/input</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220531 03:25:50.305" level="INFO">Typing text 'gellert' into text field 'xpath:/html/body/main/div/div/form/div[1]/input'.</msg>
+<status status="PASS" starttime="20220531 03:25:50.305" endtime="20220531 03:25:50.388"/>
+</kw>
+<kw name="Input Password" library="Selenium2Library">
+<arg>xpath:/html/body/main/div/div/form/div[2]/input</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20220531 03:25:50.388" level="INFO">Typing password into text field 'xpath:/html/body/main/div/div/form/div[2]/input'.</msg>
+<msg timestamp="20220531 03:25:50.414" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220531 03:25:50.429" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220531 03:25:50.388" endtime="20220531 03:25:50.429"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath:/html/body/main/div/div/form/input</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220531 03:25:50.429" level="INFO">Clicking element 'xpath:/html/body/main/div/div/form/input'.</msg>
+<status status="PASS" starttime="20220531 03:25:50.429" endtime="20220531 03:25:50.572"/>
+</kw>
+<status status="PASS" starttime="20220531 03:25:50.242" endtime="20220531 03:25:50.572"/>
+</kw>
+<kw name="Delete A Review">
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath://*[@id="navbarNav"]/ul/li[2]/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220531 03:25:50.574" level="INFO">Clicking element 'xpath://*[@id="navbarNav"]/ul/li[2]/a'.</msg>
+<status status="PASS" starttime="20220531 03:25:50.574" endtime="20220531 03:25:50.644"/>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<var>${attr}</var>
+<arg>xpath:/html/body/main/div/div/div/div/div[1]/button</arg>
+<arg>onclick</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20220531 03:25:50.679" level="INFO">${attr} = deleteReview(`17`, event)</msg>
+<status status="PASS" starttime="20220531 03:25:50.644" endtime="20220531 03:25:50.679"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath:/html/body/main/div/div/div/div/div[1]/button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220531 03:25:50.680" level="INFO">Clicking element 'xpath:/html/body/main/div/div/div/div/div[1]/button'.</msg>
+<status status="PASS" starttime="20220531 03:25:50.679" endtime="20220531 03:25:50.696"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220531 03:25:51.704" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220531 03:25:50.696" endtime="20220531 03:25:51.704"/>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<var>${attr2}</var>
+<arg>xpath:/html/body/main/div/div/div/div/div[1]/button</arg>
+<arg>onclick</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20220531 03:25:51.704" level="INFO">${attr2} = deleteReview(`18`, event)</msg>
+<status status="PASS" starttime="20220531 03:25:51.704" endtime="20220531 03:25:51.704"/>
+</kw>
+<kw name="Should Not Be Equal As Strings" library="BuiltIn">
+<arg>${attr}</arg>
+<arg>${attr2}</arg>
+<doc>Fails if objects are equal after converting them to strings.</doc>
+<status status="PASS" starttime="20220531 03:25:51.704" endtime="20220531 03:25:51.704"/>
+</kw>
+<status status="PASS" starttime="20220531 03:25:50.573" endtime="20220531 03:25:51.704"/>
+</kw>
+<kw name="Log Out">
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath://*[@id="navbarNav"]/ul/li[3]/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220531 03:25:51.719" level="INFO">Clicking element 'xpath://*[@id="navbarNav"]/ul/li[3]/a'.</msg>
+<status status="PASS" starttime="20220531 03:25:51.719" endtime="20220531 03:25:51.777"/>
+</kw>
+<status status="PASS" starttime="20220531 03:25:51.704" endtime="20220531 03:25:51.777"/>
+</kw>
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220531 03:25:51.778" endtime="20220531 03:25:53.848"/>
+</kw>
+<status status="PASS" starttime="20220531 03:25:48.947" endtime="20220531 03:25:53.848"/>
+</test>
+<status status="PASS" starttime="20220531 03:25:48.808" endtime="20220531 03:25:53.850"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="deleteReviewTest">deleteReviewTest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

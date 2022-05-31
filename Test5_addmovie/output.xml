@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.4 on win32)" generated="20220531 04:37:51.144" rpa="false" schemaversion="3">
+<suite id="s1" name="addmovieTest" source="C:\Users\Reka\Desktop\robot\Sajat\Test5_addmovie\addmovieTest.robot">
+<test id="s1-t1" name="Add A Movie To The DB" line="20">
+<kw name="Open Browser To URL">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>http://localhost:5000/#lista</arg>
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220531 04:37:51.301" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5000/#lista'.</msg>
+<status status="PASS" starttime="20220531 04:37:51.300" endtime="20220531 04:37:52.499"/>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220531 04:37:52.500" endtime="20220531 04:37:52.619"/>
+</kw>
+<status status="PASS" starttime="20220531 04:37:51.300" endtime="20220531 04:37:52.619"/>
+</kw>
+<kw name="Log In">
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath://*[@id="navbarNav"]/ul/li[2]/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220531 04:37:52.622" level="INFO">Clicking element 'xpath://*[@id="navbarNav"]/ul/li[2]/a'.</msg>
+<status status="PASS" starttime="20220531 04:37:52.619" endtime="20220531 04:37:52.710"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath:/html/body/main/div/div/form/div[1]/input</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220531 04:37:52.710" level="INFO">Typing text 'panna' into text field 'xpath:/html/body/main/div/div/form/div[1]/input'.</msg>
+<status status="PASS" starttime="20220531 04:37:52.710" endtime="20220531 04:37:52.792"/>
+</kw>
+<kw name="Input Password" library="Selenium2Library">
+<arg>xpath:/html/body/main/div/div/form/div[2]/input</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20220531 04:37:52.792" level="INFO">Typing password into text field 'xpath:/html/body/main/div/div/form/div[2]/input'.</msg>
+<msg timestamp="20220531 04:37:52.830" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220531 04:37:52.847" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220531 04:37:52.792" endtime="20220531 04:37:52.847"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath:/html/body/main/div/div/form/input</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220531 04:37:52.847" level="INFO">Clicking element 'xpath:/html/body/main/div/div/form/input'.</msg>
+<status status="PASS" starttime="20220531 04:37:52.847" endtime="20220531 04:37:53.002"/>
+</kw>
+<status status="PASS" starttime="20220531 04:37:52.619" endtime="20220531 04:37:53.002"/>
+</kw>
+<kw name="Add New Movie">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<var>${last}</var>
+<arg>xpath:(/html/body/main/div[2]/div[2])[last()]</arg>
+<arg>onclick</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20220531 04:37:53.032" level="INFO">${last} = None</msg>
+<status status="PASS" starttime="20220531 04:37:53.004" endtime="20220531 04:37:53.032"/>
+</kw>
+<kw name="Get Element Count" library="Selenium2Library">
+<var>${nr}</var>
+<arg>xpath:/html/body/main/div[2]/div[2]/div</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20220531 04:37:53.039" level="INFO">${nr} = 9</msg>
+<status status="PASS" starttime="20220531 04:37:53.032" endtime="20220531 04:37:53.039"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>//*[@id="navbarNav"]/ul/li[2]/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220531 04:37:53.039" level="INFO">Clicking element '//*[@id="navbarNav"]/ul/li[2]/a'.</msg>
+<status status="PASS" starttime="20220531 04:37:53.039" endtime="20220531 04:37:53.108"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath:/html/body/main/div/div/form/div[1]/input</arg>
+<arg>${TITLE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220531 04:37:53.109" level="INFO">Typing text 'Harry Potter' into text field 'xpath:/html/body/main/div/div/form/div[1]/input'.</msg>
+<status status="PASS" starttime="20220531 04:37:53.108" endtime="20220531 04:37:53.169"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath:/html/body/main/div/div/form/div[2]/input</arg>
+<arg>${DATE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220531 04:37:53.170" level="INFO">Typing text '2007' into text field 'xpath:/html/body/main/div/div/form/div[2]/input'.</msg>
+<status status="PASS" starttime="20220531 04:37:53.170" endtime="20220531 04:37:53.210"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath:/html/body/main/div/div/form/div[3]/input</arg>
+<arg>${DESCRIPTION}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220531 04:37:53.211" level="INFO">Typing text 'Good' into text field 'xpath:/html/body/main/div/div/form/div[3]/input'.</msg>
+<status status="PASS" starttime="20220531 04:37:53.211" endtime="20220531 04:37:53.257"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath:/html/body/main/div/div/form/div[4]/input</arg>
+<arg>${GENRE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220531 04:37:53.257" level="INFO">Typing text 'Fantasy' into text field 'xpath:/html/body/main/div/div/form/div[4]/input'.</msg>
+<status status="PASS" starttime="20220531 04:37:53.257" endtime="20220531 04:37:53.307"/>
+</kw>
+<kw name="Choose File" library="Selenium2Library">
+<arg>xpath:/html/body/main/div/div/form/div[5]/input</arg>
+<arg>${IMAGE}</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<msg timestamp="20220531 04:37:53.307" level="INFO">Sending C:\Users\Reka\Desktop\robot\Sajat\Test5_addmovie\MV5BMGVmMWNiMDktYjQ0Mi00MWIxLTk0N2UtN2ZlYTdkN2IzNDNlXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_.jpg to browser.</msg>
+<status status="PASS" starttime="20220531 04:37:53.307" endtime="20220531 04:37:53.327"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath:/html/body/main/div/div/form/div[6]/input</arg>
+<arg>${YOUTUBE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220531 04:37:53.327" level="INFO">Typing text 'https://www.youtube.com/watch?v=kI17tEL84Qg' into text field 'xpath:/html/body/main/div/div/form/div[6]/input'.</msg>
+<status status="PASS" starttime="20220531 04:37:53.327" endtime="20220531 04:37:53.389"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220531 04:37:54.401" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220531 04:37:53.390" endtime="20220531 04:37:54.401"/>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<var>${last1}</var>
+<arg>xpath:(/html/body/main/div[2]/div[2])[last()]</arg>
+<arg>onclick</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20220531 04:37:54.558" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-8.png"&gt;&lt;img src="selenium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220531 04:37:54.558" level="FAIL">Element with locator 'xpath:(/html/body/main/div[2]/div[2])[last()]' not found.</msg>
+<status status="FAIL" starttime="20220531 04:37:54.401" endtime="20220531 04:37:54.558"/>
+</kw>
+<kw name="Get Element Count" library="Selenium2Library">
+<var>${nr1}</var>
+<arg>xpath:/html/body/main/div[2]/div[2]/div</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="NOT RUN" starttime="20220531 04:37:54.558" endtime="20220531 04:37:54.558"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${nr}</arg>
+<arg>${nr1}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" starttime="20220531 04:37:54.558" endtime="20220531 04:37:54.558"/>
+</kw>
+<status status="FAIL" starttime="20220531 04:37:53.003" endtime="20220531 04:37:54.558"/>
+</kw>
+<kw name="New Movie Should Be Visible">
+<status status="NOT RUN" starttime="20220531 04:37:54.558" endtime="20220531 04:37:54.558"/>
+</kw>
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" starttime="20220531 04:37:54.558" endtime="20220531 04:37:54.558"/>
+</kw>
+<status status="FAIL" starttime="20220531 04:37:51.289" endtime="20220531 04:37:54.573">Element with locator 'xpath:(/html/body/main/div[2]/div[2])[last()]' not found.</status>
+</test>
+<status status="FAIL" starttime="20220531 04:37:51.144" endtime="20220531 04:37:54.574"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="addmovieTest">addmovieTest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
